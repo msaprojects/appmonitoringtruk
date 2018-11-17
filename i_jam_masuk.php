@@ -16,7 +16,7 @@
         $sql = "INSERT into monitoringtruk(NOPOL, SOPIR, EKSPEDISI, JAMMASUK, WAKTU, USER) values ('".$nopol."', '".$sopir."', '".$ekspedisi."', NOW(), NOW(), 'MobileApps');";
          
         //Eksekusi Query database
-        if(mysqli_query($con,$sql)){
+        if(mysqli_query($CONLOCAL, $sql)){
             // echo $sql;
             echo 'Jam Masuk nopol : '.$nopol.' Berhasil Di tambahkan';
         }else{
@@ -24,6 +24,6 @@
             echo $sql;
         }
          // echo $sql;
-        mysqli_close($con);
+        mysqli_close($CONLOCAL);
     }
 ?>
